@@ -1,8 +1,21 @@
 import React from 'react';
 import "../../styles/Products.css";
 import Categories from '../../components/Categories/Categories';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Products = () => {
+	const [productList, setProductList] = useState([]);
+
+	const fetchProductList = async () => {
+		const { data } = await axios.get('/api/products');
+		setProductList(data.products);
+	}
+
+	useEffect(() => {
+		fetchProductList();
+	}, [])
+
     return (
         <div>
 			<Categories/>
@@ -65,34 +78,38 @@ const Products = () => {
 				
 
 				<div className="products-section flex-row">
-					<div className="ecom-card vertical-card product-list">
-						<div className="ecom-card-img">
-							<img src="asset/product1-spacTrend.webp" alt="Product image"/>
-						</div>
-						<div className="ecom-details">
-							<div className="ecom-card-details">
-								<div>
-									<h2 className="ecom-card-title">Roadster</h2>
-									<h4 className="ecom-card-subtitle">Men Printed Pullover</h4>
+				{
+					productList.map(item => 
+							<div key={item._id} className="ecom-card vertical-card product-list">
+								<div className="ecom-card-img">
+									<img src={item.imageUrl} alt="Product image"/>
 								</div>
-								<div className="product-prices">
-									<div>
-										<h4 className="final-price">Rs. 999</h4>
-										<h4 className="original-price">Rs. 999</h4>
+								<div className="ecom-details">
+									<div className="ecom-card-details">
+										<div>
+											<h2 className="ecom-card-title">{item.title}</h2>
+											<h4 className="ecom-card-subtitle">{item.subtitle}</h4>
+										</div>
+										<div className="product-prices">
+											<div>
+												<h4 className="final-price">{item.finalPrice}</h4>
+												<h4 className="original-price">{item.originalPrice}</h4>
+											</div>
+											<h4 className="product-discount">( {item.discount} OFF )</h4>
+										</div>
 									</div>
-									<h4 className="product-discount">( 50% OFF )</h4>
-								</div>
+									<div className="card-actions">
+										<div className="card-action-buttons">
+											<button className="btn text-button">Add to cart</button>
+										</div>
+										<div className="card-action-icons">
+											<button className="btn icon-button" title="Add to favorites"><i className="fas fa-heart"></i></button>
+										</div>
+									</div>
+								</div>                
 							</div>
-							<div className="card-actions">
-								<div className="card-action-buttons">
-									<button className="btn text-button">Add to cart</button>
-								</div>
-								<div className="card-action-icons">
-									<button className="btn icon-button" title="Add to favorites"><i className="fas fa-heart"></i></button>
-								</div>
-							</div>
-						</div>                
-					</div>
+						)
+				}
 				</div>
 			</div>
         </div>
