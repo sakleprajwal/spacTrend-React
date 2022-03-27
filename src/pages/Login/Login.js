@@ -1,11 +1,10 @@
 import React from 'react';
-import Navbar from '../../components/Navigation/Navbar';
 import "../../styles/login-signup.css";
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
         <div>
-            <Navbar/>
             <div class="login-section flex-row">
                 <div class="login-container flex-column">
                     <h1>Login</h1>
@@ -27,7 +26,7 @@ const Login = () => {
                         <a href="#">Forgot your password?</a>
                     </div>
                     <button class="btn text-button">Login</button>
-                    <button class="btn login-link-button"><a href="https://spactrend.netlify.app/signup.html">Create New Account</a></button>
+                    <button className="btn login-link-button"><Link to="/signup">Create New Account</Link></button>
                 </div>
             </div>
         </div>

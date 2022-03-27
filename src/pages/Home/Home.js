@@ -1,15 +1,13 @@
 import React from 'react';
 import Categories from '../../components/Categories/Categories';
-import Navbar from '../../components/Navigation/Navbar';
 
 const Home = () => {
     
 
     return (
         <div>
-            <Navbar/>
             <Categories/>
-
+            
             <div className="carousel-section flex-row"> 
                 <img src="asset/carousel1-spacKart.webp" alt="Carousel image"/>
             </div>

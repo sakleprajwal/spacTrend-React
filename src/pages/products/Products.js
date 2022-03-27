@@ -1,12 +1,10 @@
 import React from 'react';
 import "../../styles/Products.css";
 import Categories from '../../components/Categories/Categories';
-import Navbar from '../../components/Navigation/Navbar';
 
 const Products = () => {
     return (
         <div>
-			<Navbar/>
 			<Categories/>
 
 			<div className="product-listing-section flex-row">

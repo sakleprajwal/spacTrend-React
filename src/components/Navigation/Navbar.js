@@ -1,22 +1,22 @@
 import React from 'react';
 import "../../styles/App.css";
-
+import { Link } from 'react-router-dom';
  
 const Navbar = () => {
     return (
         <div>
-            <div class="navbar-section flex-row">
-                <div class="navbar-brand">
-                    <a href="https://spactrend.netlify.app/" class="category-link"><span>spacTrend</span></a>
+            <div className="navbar-section flex-row">
+                <div className="navbar-brand">
+                    <Link to="/" className="category-link"><span>spacTrend</span></Link>
                 </div>
-                <div class="search flex-row">
-                    <input type="text" class="search-input" placeholder="search for Product, Brand and more" />
-                    <button class="navbar-icon-btn search-btn"><i class="fas fa-search"></i></button>
+                <div className="search flex-row">
+                    <input type="text" className="search-input" placeholder="search for Product, Brand and more"/>
+                    <button className="navbar-icon-btn search-btn"><i className="fas fa-search"></i></button>
                 </div>
-                <div class="navbar-actions flex-row">
-                    <a href="https://spactrend.netlify.app/login.html" class="category-link"><button class="navbar-icon-btn"><i class="fas fa-bell"></i></button></a>
-                    <a href="https://spactrend.netlify.app/wishlist.html" class="category-link"><button class="navbar-icon-btn"><i class="far fa-heart"></i></button></a>
-                    <a href="https://spactrend.netlify.app/cart.html" class="category-link"><button class="navbar-icon-btn"><i class="fas fa-shopping-cart"></i></button></a>
+                <div className="navbar-actions flex-row">
+                    <Link to="/login" className="category-link"><button className="navbar-icon-btn"><i className="fas fa-bell"></i></button></Link>
+                    <Link to="/wishlist" className="category-link"><button className="navbar-icon-btn"><i className="far fa-heart"></i></button></Link>
+                    <Link to="/cart" className="category-link"><button className="navbar-icon-btn"><i className="fas fa-shopping-cart"></i></button></Link>
                 </div>
             </div>
         </div>

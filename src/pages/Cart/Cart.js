@@ -1,11 +1,9 @@
 import React from 'react';
-import Navbar from '../../components/Navigation/Navbar';
 import "../../styles/Cart.css";
 
 const Cart = () => {
     return (
         <div>
-            <Navbar/>
             <div class="cart-section flex-row">
                 <div class="cart-item">
                     <div class="ecom-card">
