@@ -1,20 +1,31 @@
 import React from 'react';
 import "../../styles/Products.css";
 import Categories from '../../components/Categories/Categories';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { cartContext } from '../../hooks/cart-context/cart-context';
+import { categoryContext } from '../../hooks/category-context/category-context';
+import { wishlistContext } from '../../hooks/wishlist-context/wishlist-context';
 import axios from 'axios';
 
 const Products = () => {
-	const [productList, setProductList] = useState([]);
+	const [productList, setProductList] = useState([])
+
+	const {category} = useContext(categoryContext);
+	const {addToCart} = useContext(cartContext);
+	const {addToWishlist} = useContext(wishlistContext)
 
 	const fetchProductList = async () => {
 		const { data } = await axios.get('/api/products');
-		setProductList(data.products);
+		setProductList(data.products.filter((product) => product.category === category));
 	}
+
+	const categoryFilterFunc = (productList, category) => setProductList(productList.filter((product) => product.category === category));
+
 
 	useEffect(() => {
 		fetchProductList();
-	}, [])
+		categoryFilterFunc(productList, category)
+	}, [category])
 
     return (
         <div>
@@ -100,10 +111,10 @@ const Products = () => {
 									</div>
 									<div className="card-actions">
 										<div className="card-action-buttons">
-											<button className="btn text-button">Add to cart</button>
+											<button onClick={addToCart} className="btn text-button">Add to cart</button>
 										</div>
 										<div className="card-action-icons">
-											<button className="btn icon-button" title="Add to favorites"><i className="fas fa-heart"></i></button>
+											<button onClick={addToWishlist} className="btn icon-button" title="Add to favorites"><i className="fas fa-heart"></i></button>
 										</div>
 									</div>
 								</div>                

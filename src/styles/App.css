@@ -19,11 +19,17 @@ body{
 }
 
 .navbar-icon-btn{
+  position:relative;
+  display: inline-block;
   border: none;
   background-color: transparent;
   font-size: 1.2rem;
   padding: 0 8px;
   color: var(--ternary-color);
+}
+
+.navbar-icon-btn:hover{
+  cursor: pointer;
 }
 
 .navbar-brand{
@@ -145,6 +151,22 @@ body{
   object-position: center;
 }
 
+.icon-badge {
+  background-color: var(--ternary-shadow-color);
+  font-size: 1rem;
+  font-family: var(--secondary-font);
+  color: var(--primary-color);
+  text-align: center;
+  padding: 5px;
+  line-height: 1;
+  width: 1.5rem;
+  height:1.5rem;
+  border-radius: 50%;
+  position: absolute; /* changed */
+  top: -0.8rem; /* changed */
+  left: 1.4rem; /* changed */
+}
+
 
 @media all and (max-width: 576px) { 
   .categories-section{
@@ -193,4 +215,6 @@ body{
   .deal-item{
       margin: 8px;
   }
+
+  
 } 

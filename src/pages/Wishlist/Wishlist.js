@@ -1,7 +1,13 @@
 import React from 'react';
 import "../../styles/Wishlist.css"
+import { useContext } from 'react';
+import { cartContext } from '../../hooks/cart-context/cart-context';
+import { wishlistContext } from '../../hooks/wishlist-context/wishlist-context';
 
 const Wishlist = () => {
+    const {removeFromWishlist} = useContext(wishlistContext)
+    const {addToCart} = useContext(cartContext)
+
     return (
         <div>
             <div class="wishlist-section flex-row">
@@ -25,10 +31,10 @@ const Wishlist = () => {
                         </div>
                         <div class="card-actions">
                             <div class="card-action-buttons">
-                                <button class="btn text-button">Add to cart</button>
+                                <button onClick={addToCart} class="btn text-button">Add to cart</button>
                             </div>
                             <div class="card-action-icons">
-                                <button class="btn icon-button" title="Remove"><i class="far fa-trash"></i></button>
+                                <button onClick={removeFromWishlist} class="btn icon-button" title="Remove"><i class="far fa-trash"></i></button>
                             </div>
                         </div>
                     </div>                
@@ -54,10 +60,10 @@ const Wishlist = () => {
                         </div>
                         <div class="card-actions">
                             <div class="card-action-buttons">
-                                <button class="btn text-button">Add to cart</button>
+                                <button onClick={addToCart} class="btn text-button">Add to cart</button>
                             </div>
                             <div class="card-action-icons">
-                                <button class="btn icon-button" title="Remove"><i class="far fa-trash"></i></button>
+                                <button onClick={removeFromWishlist} class="btn icon-button" title="Remove"><i class="far fa-trash"></i></button>
                             </div>
                         </div>
                     </div>                
