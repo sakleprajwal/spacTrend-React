@@ -1,7 +1,12 @@
 import React from 'react';
 import "../../styles/Cart.css";
+import { useContext } from 'react';
+import { cartContext } from '../../hooks/cart-context/cart-context';
+import { wishlistContext } from '../../hooks/wishlist-context/wishlist-context';
 
 const Cart = () => {
+    const {removeFromCart} = useContext(cartContext)
+    const {addToWishlist} = useContext(wishlistContext)
     return (
         <div>
             <div class="cart-section flex-row">
@@ -31,10 +36,10 @@ const Cart = () => {
                             </div>
                             <div class="card-actions">
                                 <div class="card-action-buttons">
-                                    <button class="btn text-button">REMOVE</button>
+                                    <button onClick={removeFromCart} class="btn text-button">REMOVE</button>
                                 </div>
                                 <div class="card-action-icons">
-                                    <button class="btn icon-button" title="Add to favorites"><i class="fas fa-heart"></i></button>
+                                    <button onClick={addToWishlist} class="btn icon-button" title="Add to favorites"><i class="fas fa-heart"></i></button>
                                 </div>
                             </div>
                         </div>                
@@ -64,10 +69,10 @@ const Cart = () => {
                             </div>
                             <div class="card-actions">
                                 <div class="card-action-buttons">
-                                    <button class="btn text-button">REMOVE</button>
+                                    <button onClick={removeFromCart} class="btn text-button">REMOVE</button>
                                 </div>
                                 <div class="card-action-icons">
-                                    <button class="btn icon-button" title="Add to favorites"><i class="fas fa-heart"></i></button>
+                                    <button onClick={addToWishlist} class="btn icon-button" title="Add to favorites"><i class="fas fa-heart"></i></button>
                                 </div>
                             </div>
                         </div>                
@@ -97,10 +102,10 @@ const Cart = () => {
                             </div>
                             <div class="card-actions">
                                 <div class="card-action-buttons">
-                                    <button class="btn text-button">REMOVE</button>
+                                    <button onClick={removeFromCart} class="btn text-button">REMOVE</button>
                                 </div>
                                 <div class="card-action-icons">
-                                    <button class="btn icon-button" title="Add to favorites"><i class="fas fa-heart"></i></button>
+                                    <button onClick={addToWishlist} class="btn icon-button" title="Add to favorites"><i class="fas fa-heart"></i></button>
                                 </div>
                             </div>
                         </div>                
