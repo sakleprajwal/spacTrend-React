@@ -1,0 +1,16 @@
+.wishlist-section{
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+    justify-content: space-evenly;
+    background-color: var(--ternary-shadow-color);
+}
+
+.wishlist-card{
+    width: 16rem;
+}
+
+.wishlist-card img{
+    height: 100%;
+}
