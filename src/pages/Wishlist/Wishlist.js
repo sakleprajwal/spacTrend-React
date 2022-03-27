@@ -1,11 +1,9 @@
 import React from 'react';
-import Navbar from '../../components/Navigation/Navbar';
 import "../../styles/Wishlist.css"
 
 const Wishlist = () => {
     return (
         <div>
-            <Navbar/>
             <div class="wishlist-section flex-row">
                 <div class="ecom-card vertical-card wishlist-card">
                     <div class="ecom-card-img">
