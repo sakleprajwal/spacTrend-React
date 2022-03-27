@@ -1,0 +1,196 @@
+@import "./base.css";
+@import "./utils.css";
+
+body{
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar-section{
+  width: 100%;
+  height: 5rem;
+  position: sticky;
+  top: 0%;
+  background-color: var(--primary-color);
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  align-items: center;
+  color: var(--ternary-color);
+  z-index: 100;
+}
+
+.navbar-icon-btn{
+  border: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  padding: 0 8px;
+  color: var(--ternary-color);
+}
+
+.navbar-brand{
+  width: 100%;
+  max-width: 20rem;
+  font-family: var(--brand-font);
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  order: 1;
+}
+
+.search{
+  width: 100%;
+  min-width: 3rem;
+  margin: 0 1rem;
+  order: 2;
+}
+
+.search-input{
+  width: 100%;
+  height: 2rem;
+  border: none;
+  padding: 1.5rem;
+  font-family: var(--ternary-font);
+  font-size: 1rem;
+}
+
+.search-input:focus{
+  border: none;
+}
+
+.search-btn{
+  background-color: var(--ternary-color);
+  color: var(--secondary-shadow-color);
+}
+
+.navbar-actions{
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 20rem;
+  order: 3;
+}
+
+.categories-section{
+  overflow: scroll;
+}
+
+.category-link{
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-item{
+  padding: 8px 2rem;
+}
+
+.category-item:hover{
+  transition: all 0.3s ease-out;
+  margin-top: 8px;
+}
+
+.category-item img{
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.category-item h4{
+  margin: auto;
+  font-family: var(--ternary-font);
+}
+
+.categories-section::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-section{
+  width: 100%;
+  height: max-content;
+  margin: 1rem 0;
+}
+
+.carousel-section img{
+  width: 100%;
+  height: auto;
+}
+
+.deals-section{
+  margin: 2rem;
+}
+
+.deals-title{
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: var(--primary-font);
+  letter-spacing: 6px;
+  margin: 1rem 0;
+}
+
+.deal-items-container{
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+
+.deal-items-container::-webkit-scrollbar {
+  display: none;
+}
+
+.deal-item{
+  margin: 1rem;
+}
+
+.deal-item img{
+  width: 14rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+@media all and (max-width: 576px) { 
+  .categories-section{
+      justify-content: start;
+  }
+
+  .deal-items-container{
+      flex-wrap: nowrap;
+      justify-content: start;
+  }
+
+  .navbar-section{
+      flex-wrap: wrap;
+      height: max-content;
+      padding: 8px;
+      justify-content: space-between;
+  }
+
+  .navbar-brand{
+      justify-content: start;
+      margin-left: 1rem;
+      width: max-content; 
+  }
+
+  .search{
+      order: 3;
+      margin-top: 8px;
+  }
+
+  .search-input{
+      padding: 1rem;
+  }
+
+  .navbar-actions{
+      order: 2;
+  }
+
+  .navbar-actions{
+      max-width: 12rem;
+  }
+
+  .deals-section{
+      margin: 8px;
+  }
+
+  .deal-item{
+      margin: 8px;
+  }
+} 
