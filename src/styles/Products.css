@@ -109,11 +109,28 @@ input[type=radio] {
     color: var(--ternary-color);
 }
 
+.filter-toggle-section{
+    display: none;
+}
+
 
 
 @media all and (max-width: 576px){
+    .product-listing-section{
+        flex-direction: column;
+    }
+
+    .filter-toggle-section{
+        display: flex;
+    }
+
+    .fab-button{
+        background-color: var(--ternary-opaque-color);
+        color: var(--primary-color);
+    }
+
     .filter-section{
-        display: none;
+        width: 100%;
     }
 
     .product-list{

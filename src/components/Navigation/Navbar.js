@@ -21,8 +21,8 @@ const Navbar = () => {
                     <button className="navbar-icon-btn search-btn"><i className="fas fa-search"></i></button>
                 </div>
                 <div className="navbar-actions flex-row">
-                <Link to="/login" className="category-link"><button className="navbar-icon-btn"><i class="fas fa-sign-in"></i></button></Link>
-                    <Link to="/wishlist" className="category-link"><button className="navbar-icon-btn"><i class="fas fa-heart"></i></button></Link>
+                <Link to="/login" className="category-link"><button className="navbar-icon-btn"><i className="fas fa-sign-in"></i></button></Link>
+                    <Link to="/wishlist" className="category-link"><button className="navbar-icon-btn"><i className="fas fa-heart"></i></button></Link>
                     <Link to="/cart" className="category-link"><button className="navbar-icon-btn"><i className="fas fa-shopping-cart"></i><div className='icon-badge'>{itemsInCart}</div></button></Link>
                 </div>
             </div>
