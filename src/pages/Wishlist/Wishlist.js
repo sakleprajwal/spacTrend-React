@@ -10,60 +10,60 @@ const Wishlist = () => {
 
     return (
         <div>
-            <div class="wishlist-section flex-row">
-                <div class="ecom-card vertical-card wishlist-card">
-                    <div class="ecom-card-img">
+            <div className="wishlist-section flex-row">
+                <div className="ecom-card vertical-card wishlist-card">
+                    <div className="ecom-card-img">
                         <img src="asset/product1-spacTrend.webp" alt="Product image"/>
                     </div>
-                    <div class="ecom-details">
-                        <div class="ecom-card-details">
+                    <div className="ecom-details">
+                        <div className="ecom-card-details">
                             <div>
-                                <h2 class="ecom-card-title">Roadster</h2>
-                                <h4 class="ecom-card-subtitle">Men Printed Pullover</h4>
+                                <h2 className="ecom-card-title">Roadster</h2>
+                                <h4 className="ecom-card-subtitle">Men Printed Pullover</h4>
                             </div>
-                            <div class="product-prices">
+                            <div className="product-prices">
                                 <div>
-                                    <h4 class="final-price">Rs. 999</h4>
-                                    <h4 class="original-price">Rs. 999</h4>
+                                    <h4 className="final-price">Rs. 999</h4>
+                                    <h4 className="original-price">Rs. 999</h4>
                                 </div>
-                                <h4 class="product-discount">( 50% OFF )</h4>
+                                <h4 className="product-discount">( 50% OFF )</h4>
                             </div>
                         </div>
-                        <div class="card-actions">
-                            <div class="card-action-buttons">
-                                <button onClick={addToCart} class="btn text-button">Add to cart</button>
+                        <div className="card-actions">
+                            <div className="card-action-buttons">
+                                <button onClick={addToCart} className="btn text-button">Add to cart</button>
                             </div>
-                            <div class="card-action-icons">
-                                <button onClick={removeFromWishlist} class="btn icon-button" title="Remove"><i class="far fa-trash"></i></button>
+                            <div className="card-action-icons">
+                                <button onClick={removeFromWishlist} className="btn icon-button" title="Remove"><i className="far fa-trash"></i></button>
                             </div>
                         </div>
                     </div>                
                 </div>
 
-                <div class="ecom-card vertical-card wishlist-card">
-                    <div class="ecom-card-img">
+                <div className="ecom-card vertical-card wishlist-card">
+                    <div className="ecom-card-img">
                         <img src="asset/product2-spacTrend.webp" alt="Product image"/>
                     </div>
-                    <div class="ecom-details">
-                        <div class="ecom-card-details">
+                    <div className="ecom-details">
+                        <div className="ecom-card-details">
                             <div>
-                                <h2 class="ecom-card-title">Roadster</h2>
-                                <h4 class="ecom-card-subtitle">Men Printed Pullover</h4>
+                                <h2 className="ecom-card-title">Roadster</h2>
+                                <h4 className="ecom-card-subtitle">Men Printed Pullover</h4>
                             </div>
-                            <div class="product-prices">
+                            <div className="product-prices">
                                 <div>
-                                    <h4 class="final-price">Rs. 999</h4>
-                                    <h4 class="original-price">Rs. 999</h4>
+                                    <h4 className="final-price">Rs. 999</h4>
+                                    <h4 className="original-price">Rs. 999</h4>
                                 </div>
-                                <h4 class="product-discount">( 50% OFF )</h4>
+                                <h4 className="product-discount">( 50% OFF )</h4>
                             </div>
                         </div>
-                        <div class="card-actions">
-                            <div class="card-action-buttons">
-                                <button onClick={addToCart} class="btn text-button">Add to cart</button>
+                        <div className="card-actions">
+                            <div className="card-action-buttons">
+                                <button onClick={addToCart} className="btn text-button">Add to cart</button>
                             </div>
-                            <div class="card-action-icons">
-                                <button onClick={removeFromWishlist} class="btn icon-button" title="Remove"><i class="far fa-trash"></i></button>
+                            <div className="card-action-icons">
+                                <button onClick={removeFromWishlist} className="btn icon-button" title="Remove"><i className="far fa-trash"></i></button>
                             </div>
                         </div>
                     </div>                
