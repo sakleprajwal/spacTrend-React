@@ -3,6 +3,7 @@ import "../../styles/App.css";
 import { NavLink } from 'react-router-dom';
 import { cartContext } from '../../hooks/cart-context/cart-context';
 import {useAuth} from '../../hooks/authentication-context/auth-context'
+import Toaster from '../Toaster/Toaster';
 
  
 const Navbar = () => {
@@ -12,6 +13,7 @@ const Navbar = () => {
     const logoutHandler = () => {
         localStorage.setItem("token", "");
         setIsLoggedIn(false);
+        Toaster({message: "logged out successfully!", type: "success"})
     }
 
     return ( 

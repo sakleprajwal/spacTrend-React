@@ -6,6 +6,7 @@ import { CartProvider } from "./hooks/cart-context/cart-context.js"
 import { AuthProvider } from "./hooks/authentication-context/auth-context";
 import { CategoryProvider } from "./hooks/category-context/category-context";
 import { WishlistProvider } from "./hooks/wishlist-context/wishlist-context";
+import { ToastContainer } from "react-toastify";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
 				<CategoryProvider>
 					<Router/>
 				</CategoryProvider>
+				<ToastContainer />
 			</WishlistProvider>
 			</CartProvider>
 		</AuthProvider>
