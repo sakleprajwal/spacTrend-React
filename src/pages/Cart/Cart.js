@@ -3,10 +3,31 @@ import "../../styles/Cart.css";
 import { useContext } from 'react';
 import { cartContext } from '../../hooks/cart-context/cart-context';
 import { wishlistContext } from '../../hooks/wishlist-context/wishlist-context';
+import axios from 'axios';
+import { useEffect } from 'react';
 
 const Cart = () => {
-    const {removeFromCart} = useContext(cartContext)
-    const {addToWishlist} = useContext(wishlistContext)
+    const {removeFromCart} = useContext(cartContext);
+    const {addToWishlist} = useContext(wishlistContext);
+    const encodedToken = localStorage.getItem("token");
+
+    const fetchCartData = async() => {
+        try{
+            const { data } = await axios.get('/api/user/cart', {
+                headers:{
+                    'authorization': encodedToken
+                }
+            })
+        }catch(err){
+            console.log(err)
+        }
+        
+    }
+
+    useEffect(() => {
+        fetchCartData();
+    }, [])
+
     return (
         <div>
             <div className="cart-section flex-row">
