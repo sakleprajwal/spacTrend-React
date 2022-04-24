@@ -1,21 +1,23 @@
-import { React, useContext } from 'react';
+import { React } from 'react';
 import "../../styles/App.css";
 import { NavLink } from 'react-router-dom';
-import { cartContext } from '../../hooks/cart-context/cart-context';
-import {useAuth} from '../../hooks/authentication-context/auth-context'
+import { useCart } from '../../hooks/cart-context/cart-context';
+import {useAuth} from '../../hooks/authentication-context/auth-context';
+import Toaster from '../Toaster/Toaster';
 
  
 const Navbar = () => {
-    const { itemsInCart } = useContext(cartContext);
+    const {cartItems, resetCart} = useCart()
     const {isLoggedIn, setIsLoggedIn} = useAuth()
 
     const logoutHandler = () => {
         localStorage.setItem("token", "");
         setIsLoggedIn(false);
+        resetCart();
+        Toaster({message: "logged out successfully!", type: "success"})
     }
 
     return ( 
-        <div>
             <div className="navbar-section flex-row">
                 <div className="navbar-brand">
                     <NavLink to="/" className="category-link"><span>spacTrend</span></NavLink>
@@ -35,7 +37,11 @@ const Navbar = () => {
                         <button className="navbar-icon-btn"><i className="fas fa-heart"></i></button>
                     </NavLink>
                     <NavLink to="/cart" className="category-link">
-                        <button className="navbar-icon-btn"><i className="fas fa-shopping-cart"></i><div className='icon-badge'>{itemsInCart}</div></button>
+                        <button className="navbar-icon-btn"><i className="fas fa-shopping-cart"></i>
+                        {
+                            cartItems.length > 0 ? <div className='icon-badge'>{cartItems.length}</div> : <></>
+                        }
+                        </button>
                     </NavLink>
                     {
                         isLoggedIn && 
@@ -43,7 +49,6 @@ const Navbar = () => {
                     }
                 </div>
             </div>
-        </div>
     );
 };
 

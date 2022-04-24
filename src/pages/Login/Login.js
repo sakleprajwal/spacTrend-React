@@ -3,13 +3,13 @@ import "../../styles/login-signup.css";
 import axios from 'axios';
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from '../../hooks/authentication-context/auth-context';
+import Toaster from '../../components/Toaster/Toaster';
 
 const Login = () => {
     const initialFormData = { email: "", password: "" };
 
     const [loginForm, setLoginForm] = useState(initialFormData);
     const { email, password } = loginForm;
-    const [loginMessage, setLoginSuccess] = useState("");
     const { setIsLoggedIn } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
@@ -19,18 +19,16 @@ const Login = () => {
         e.preventDefault();
         (async () => {
           try {
-            const { data: { encodedToken } } = await axios.post("api/auth/login", { email, password });
-            if (encodedToken) {
-              localStorage.setItem("token", encodedToken)
+            const res = await axios.post("api/auth/login", { email, password });
+            if (res.status === 200) {
+              localStorage.setItem("token", res?.data?.encodedToken)
               setIsLoggedIn(true);
             }
-            setLoginSuccess("Logged in successfully...")
-            console.log("Logged in Successfully with", email, password)
+            Toaster({message: "Logged in Successfully", type: "success"});
             navigate(from, {replace:true})
           }
           catch (err) {
-            setLoginSuccess("Email or password is incorrect...")
-            console.log(err)
+            Toaster({message: "Incorrect credentials", type: "error"});
           }
         })()
     }
@@ -47,7 +45,6 @@ const Login = () => {
             
                 <form className="login-container flex-column" onSubmit={loginSubmitHandler}>
                     <h1>Login</h1>
-                    {loginMessage}
                     <div className="login-credentials-container flex-column ">
                         <div className="login-credential-field flex-column">
                             <label htmlFor="email">Email address</label>

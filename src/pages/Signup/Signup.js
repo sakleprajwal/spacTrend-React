@@ -9,7 +9,6 @@ const Signup = () => {
 
     const [signupForm, setSignupForm] = useState(initialFormData);
     const { email, password, firstName, lastName } = signupForm;
-    const [signupMessage, setSignupSuccess] = useState("");
     const { setIsLoggedIn } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
@@ -23,14 +22,12 @@ const Signup = () => {
             if (encodedToken) {
               localStorage.setItem("token", encodedToken)
               setIsLoggedIn(true);
+              Toaster({message: "Registered Successfully", type: "success"});
             }
-            setSignupSuccess("Signed up in successfully...")
-            console.log("Signed up Successfully with", user)
             navigate(from, {replace: true})
           }
           catch (err) {
-            setSignupSuccess("User is incorrect...")
-            console.log(err)
+            Toaster({message: "User already exist", type: "error"});
           }
         })()
     }
@@ -47,7 +44,6 @@ const Signup = () => {
             
                 <form className="login-container flex-column" onSubmit={signupSubmitHandler}>
                     <h1>Signup</h1>
-                    {signupMessage}
                     <div className="login-credentials-container flex-column ">
                         <div className="login-credential-field flex-column">
                             <label htmlFor="email">First Name</label>
