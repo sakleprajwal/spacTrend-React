@@ -24,7 +24,6 @@ const Signup = () => {
               setIsLoggedIn(true);
               Toaster({message: "Registered Successfully", type: "success"});
             }
-            console.log("Signed up Successfully with", user)
             navigate(from, {replace: true})
           }
           catch (err) {

@@ -13,6 +13,8 @@ export const users = [
     lastName: "sakle",
     email: "sakleprajwal@gmail.com",
     password: "prajwal",
+    cart: [],
+    wishlist: [],
     createdAt: formatDate(),
     updatedAt: formatDate(),
   },

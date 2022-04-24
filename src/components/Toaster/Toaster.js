@@ -4,7 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../../styles/base.css';
 
 const Toaster = ({message, type}) => {
-    console.log("Toaster")
     return toast.success(message, {
         position: "bottom-center",
         autoClose: 1200,

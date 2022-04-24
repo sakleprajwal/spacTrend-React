@@ -19,9 +19,9 @@ const Login = () => {
         e.preventDefault();
         (async () => {
           try {
-            const { data: { encodedToken } } = await axios.post("api/auth/login", { email, password });
-            if (encodedToken) {
-              localStorage.setItem("token", encodedToken)
+            const res = await axios.post("api/auth/login", { email, password });
+            if (res.status === 200) {
+              localStorage.setItem("token", res?.data?.encodedToken)
               setIsLoggedIn(true);
             }
             Toaster({message: "Logged in Successfully", type: "success"});
