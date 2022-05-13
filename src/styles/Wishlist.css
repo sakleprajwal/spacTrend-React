@@ -7,6 +7,23 @@
     background-color: var(--ternary-shadow-color);
 }
 
+.wishlist-active{
+    color: var(--secondary-color);
+}
+
+.wishlist-inactive{
+    color: var(--primary-color);
+}
+
+.icon-button:hover {
+    cursor: pointer;
+    background: var(--ternary-color);
+}
+
+.icon-button:active {
+    transition: color 0s;
+}
+
 .wishlist-card{
     width: 16rem;
 }
