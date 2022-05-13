@@ -51,7 +51,7 @@ const Signup = () => {
                         </div>
                         <div className="login-credential-field flex-column">
                             <label htmlFor="lastName">Last Name</label>
-                            <input type="text" name="password" placeholder="Sakle" defaultValue={signupForm.lastName} onChange={SignupFormHandler} />
+                            <input type="text" name="lastName" placeholder="Sakle" defaultValue={signupForm.lastName} onChange={SignupFormHandler} />
                         </div>
                         <div className="login-credential-field flex-column">
                             <label htmlFor="email">Email address</label>
